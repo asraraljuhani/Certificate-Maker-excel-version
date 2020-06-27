@@ -12,7 +12,6 @@ const send = require('gmail-send')({
     user: process.env.EMAIL,
     pass: process.env.PASSWORD,
   });
-
 xlData.forEach(e => {
     send({
             to:   e.email,
@@ -23,4 +22,4 @@ xlData.forEach(e => {
           .catch((error) => console.error('ERROR', error));      
 })
 
-app.listen(3000) 
+app.listen(5000) 
