@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000;
 const path = require('path')
 app.use(express.static(path.join(__dirname, 'public')))
 var XLSX = require('xlsx')
@@ -22,4 +23,5 @@ xlData.forEach(e => {
           .catch((error) => console.error('ERROR', error));      
 })
 
-app.listen(5000) 
+// app.listen(3000) 
+app.listen(port, () => console.log(`url-shortener listening on port ${port}!`));
