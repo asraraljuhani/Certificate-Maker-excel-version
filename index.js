@@ -3,7 +3,13 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000;
 const path = require('path')
-app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, 'public')))
+app.get('/', function(req, res) {
+  // res.sendFile(path.join(__dirname + '/public'));
+  // app.use(express.static(path.join(__dirname, 'public')))
+  res.sendFile(path.join(__dirname + '/public/index.html'));
+  
+});
 var XLSX = require('xlsx')
 var workbook = XLSX.readFile(`${__dirname}/test.xlsx`);
 var sheet_name_list = workbook.SheetNames;
