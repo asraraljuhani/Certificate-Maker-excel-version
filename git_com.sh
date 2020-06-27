@@ -1,5 +1,0 @@
-#!/bin/sh
-git add .
-git commit -m "fix"
-git push origin master
-git push heroku master
